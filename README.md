@@ -23,7 +23,7 @@ Simply type ```weather``` (or whatever you configure) into Alfred. If your API a
 
 # Download
 
-[Dark Sky Weather](https://github.com/quells/darksky-weather-alfred2/blob/master/Dark%20Sky%20Weather.alfredworkflow)
+[Dark Sky Weather](https://github.com/quells/darksky-weather-alfred2/blob/master/Dark%20Sky%20Weather.alfredworkflow?raw=true)
 
 # Copyright
 
