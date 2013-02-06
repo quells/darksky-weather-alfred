@@ -25,7 +25,7 @@ An Alfred v1 extension on [Hack / Make](http://hackmake.org/2012/11/dark-sky-alf
 
 # Download
 
-[Dark Sky Weather](https://github.com/quells/darksky-weather-alfred2/blob/master/Dark%20Sky%20Weather.alfredworkflow?raw=true)
+[Dark Sky Weather](https://github.com/quells/darksky-weather-alfred2/blob/master/Dark%20Sky.alfredworkflow?raw=true)
 
 # Copyright
 
