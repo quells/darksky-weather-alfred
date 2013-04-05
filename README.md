@@ -25,7 +25,7 @@ An Alfred v1 extension for the Dark Sky API on [Hack / Make](http://hackmake.org
 
 # Download
 
-[Forecast.alfredworkflow](https://github.com/quells/darksky-weather-alfred2/blob/master/Dark%20Sky.alfredworkflow?raw=true)
+[Forecast.alfredworkflow](https://github.com/quells/darksky-weather-alfred2/blob/master/Forecast.alfredworkflow?raw=true)
 
 # Copyright
 
