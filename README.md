@@ -5,7 +5,7 @@ A Python script to display the current weather conditions from the Forecast.io A
 
 # Installation
 
-To install the Dark Sky Weather workflow, double click on ```Forecast.alfredworkflow``` or drag the workflow to the workflow window in Alfred.
+To install the Forecast.io Weather workflow, double click on ```Forecast.alfredworkflow``` or drag the workflow to the workflow window in Alfred.
 
 Use the [registration form](https://developer.forecast.io/register) to create a free Forecast.io developer account to get an API key. [Find your latitude and longitude](http://stevemorse.org/jcal/latlon.php), but don’t use more than 4 decimal places.
 
