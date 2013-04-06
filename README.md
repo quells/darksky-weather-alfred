@@ -9,7 +9,7 @@ To install the Forecast.io Weather workflow, double click on ```Forecast.alfredw
 
 Use the [registration form](https://developer.forecast.io/register) to create a free Forecast.io developer account to get an API key. [Find your latitude and longitude](http://stevemorse.org/jcal/latlon.php), but don’t use more than 4 decimal places.
 
-Next, edit the first script filter by double clicking on it. Edit the line ```print forecast(“APIKEY”, “LAT”, “LONG”))``` to fill in your Forecast.io API key and location. Be sure to keep these in quotes.
+Next, edit the first script filter by double clicking on it. Edit the line ```print forecast(“APIKEY”, “LAT”, “LONG”)``` to fill in your Forecast.io API key and location. Be sure to keep these in quotes.
 
 # How to use
 
