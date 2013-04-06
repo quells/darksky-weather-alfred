@@ -29,15 +29,20 @@ An Alfred v1 extension for the Dark Sky API on [Hack / Make](http://hackmake.org
 
 # Copyright
 
-The Forecast name and logo are wholly owned by The Dark Sky Company, LLC. Kai Wells does not own or claim to own anything related to Dark Sky.
+The Forecast and Dark Sky names and logos are wholly owned by The Dark Sky Company, LLC. Kai Wells does not own or claim to own anything related to Forecast or Dark Sky.
 
 # Version History
+
+## 1.2.1 - April 6, 2013
+
+- Bug fix for international locations.
 
 ## 1.2 - April 4, 2013
 
 - Updated script to use the new Forecast.io API rather than the Dark Sky API.
 - Workflow now opens Forecast.io instead of Accuweather.com when an item is selected.
 - Includes a forecast for today and tomorrow in addition to the current conditions.
+- Uses Forecast.io icon instead of Dark Sky icon.
 
 ## 1.1 - February 6, 2013
 

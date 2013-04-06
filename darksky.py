@@ -10,8 +10,15 @@ def forecast(APIKEY, LAT, LONG):
 	item = json.loads(response_items)
 	# PARSE ITEMS
 	xml = []
+	while True:
+		try:
+			currentsummary = item[u'minutely'][u'summary']
+			break
+		except KeyError:
+			currentsummary = item[u'currently'][u'summary']
+			break
 	xml.append ({
-		'title': str(int(item[u'currently'][u'temperature']*100)/100) + 'F, ' + item[u'minutely'][u'summary'].capitalize(),
+		'title': str(int(item[u'currently'][u'temperature']*100)/100) + 'F, ' + currentsummary.capitalize(),
 		'subtitle': item[u'hourly'][u'summary'].capitalize(),
 		'arg': LAT + ',' + LONG,
 		'uid': str(int(item[u'hourly'][u'data'][0][u'time'])),
