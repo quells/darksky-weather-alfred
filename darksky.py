@@ -27,14 +27,14 @@ def forecast(APIKEY, LAT, LONG):
 	xml.append ({
 		'title': 'Today: ' + str(int(item[u'daily'][u'data'][0][u'temperatureMin']*100)/100) + 'F - ' + str(int(item[u'daily'][u'data'][0][u'temperatureMax']*100)/100) + 'F',
 		'subtitle': item[u'daily'][u'data'][0][u'summary'].capitalize(),
-		'arg': LAT + ',' + LONG + ',' + str(int(item[u'daily'][u'data'][0][u'time'])),
+		'arg': LAT + ',' + LONG,
 		'uid': str(int(item[u'daily'][u'data'][0][u'time'])),
 		'icon': 'icon.png'
 	})
 	xml.append ({
 		'title': 'Tomorrow: ' + str(int(item[u'daily'][u'data'][1][u'temperatureMin']*100)/100) + 'F - ' + str(int(item[u'daily'][u'data'][1][u'temperatureMax']*100)/100) + 'F',
 		'subtitle': item[u'daily'][u'data'][1][u'summary'].capitalize(),
-		'arg': LAT + ',' + LONG + ',' + str(int(item[u'daily'][u'data'][1][u'time'])),
+		'arg': LAT + ',' + LONG,
 		'uid': str(int(item[u'daily'][u'data'][1][u'time'])),
 		'icon': 'icon.png'
 	})

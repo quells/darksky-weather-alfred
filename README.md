@@ -36,6 +36,7 @@ The Forecast and Dark Sky names and logos are wholly owned by The Dark Sky Compa
 ## 1.2.1 - April 6, 2013
 
 - Bug fix for international locations.
+- Fixed method for opening Forecast.io with the location set in Alfred.
 
 ## 1.2 - April 4, 2013
 
