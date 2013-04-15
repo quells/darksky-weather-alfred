@@ -7,9 +7,13 @@ A Python script to display the current weather conditions from the Forecast.io A
 
 To install the Forecast.io Weather workflow, double click on ```Forecast.alfredworkflow``` or drag the workflow to the workflow window in Alfred.
 
-Use the [registration form](https://developer.forecast.io/register) to create a free Forecast.io developer account to get an API key. [Find your latitude and longitude](http://stevemorse.org/jcal/latlon.php), but don’t use more than 4 decimal places.
+1. Use the [registration form](https://developer.forecast.io/register) to create a free Forecast.io developer account to get an API key.
+2. [Find your latitude and longitude](http://stevemorse.org/jcal/latlon.php), but don’t use more than 4 decimal places.
+3. Decide what units you would like to use for temperature. Options include Fahrenheit, Celsius, and Kelvin.
 
-Next, edit the first script filter by double clicking on it. Edit the line ```print forecast(“APIKEY”, “LAT”, “LONG”)``` to fill in your Forecast.io API key and location. Be sure to keep these in quotes.
+Next, edit the first script filter by double clicking on it. Edit the line ```print forecast(“APIKEY”, “LAT”, “LONG”, “FCK”)``` to fill in your Forecast.io API key, location, and unit preference. Be sure to keep these in quotes.
+
+Example: ```print forcast(“APIKEY”, “52.2053”, “0.1218”, “C”)```
 
 # How to use
 
@@ -32,6 +36,10 @@ An Alfred v1 extension for the Dark Sky API on [Hack / Make](http://hackmake.org
 The Forecast and Dark Sky names and logos are wholly owned by The Dark Sky Company, LLC. Kai Wells does not own or claim to own anything related to Forecast or Dark Sky.
 
 # Version History
+
+## 1.2.2 - April 15, 2013
+
+- Added units preference for temperature.
 
 ## 1.2.1 - April 6, 2013
 

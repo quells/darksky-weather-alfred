@@ -2,7 +2,19 @@ from xml.etree import ElementTree as ET
 import urllib, urllib2
 import json
 
-def forecast(APIKEY, LAT, LONG):
+def formatTemp(t, f):
+	"""
+	Input: temp float in Fahrenheit, format string (F, C, K)
+	Returns: formatted temp string
+	"""
+	if f == 'F':
+		return str(int(t*100)/100) + 'F'
+	elif f == 'C':
+		return str(int((t-32)/1.8*100)/100) + 'C'
+	elif f == 'K':
+		return str(int(((t-32)/1.8+273.15)*100)/100) + 'K'
+
+def forecast(APIKEY, LAT, LONG, FCK):
 	# GET JSON DATA
 	url = 'https://api.forecast.io/forecast/' + APIKEY + '/' + LAT + ',' + LONG
 	response = urllib2.urlopen(url)
@@ -18,21 +30,21 @@ def forecast(APIKEY, LAT, LONG):
 			currentsummary = item[u'currently'][u'summary']
 			break
 	xml.append ({
-		'title': str(int(item[u'currently'][u'temperature']*100)/100) + 'F, ' + currentsummary.capitalize(),
+		'title': formatTemp(item[u'currently'][u'temperature'], FCK) + ', ' + currentsummary.capitalize(),
 		'subtitle': item[u'hourly'][u'summary'].capitalize(),
 		'arg': LAT + ',' + LONG,
 		'uid': str(int(item[u'hourly'][u'data'][0][u'time'])),
 		'icon': 'icon.png'
 	})
 	xml.append ({
-		'title': 'Today: ' + str(int(item[u'daily'][u'data'][0][u'temperatureMin']*100)/100) + 'F - ' + str(int(item[u'daily'][u'data'][0][u'temperatureMax']*100)/100) + 'F',
+		'title': 'Today: ' + formatTemp(item[u'daily'][u'data'][0][u'temperatureMin'], FCK) + ' - ' + formatTemp(item[u'daily'][u'data'][0][u'temperatureMax'], FCK),
 		'subtitle': item[u'daily'][u'data'][0][u'summary'].capitalize(),
 		'arg': LAT + ',' + LONG,
 		'uid': str(int(item[u'daily'][u'data'][0][u'time'])),
 		'icon': 'icon.png'
 	})
 	xml.append ({
-		'title': 'Tomorrow: ' + str(int(item[u'daily'][u'data'][1][u'temperatureMin']*100)/100) + 'F - ' + str(int(item[u'daily'][u'data'][1][u'temperatureMax']*100)/100) + 'F',
+		'title': 'Tomorrow: ' + formatTemp(item[u'daily'][u'data'][1][u'temperatureMin'], FCK) + ' - ' + formatTemp(item[u'daily'][u'data'][1][u'temperatureMax'], FCK),
 		'subtitle': item[u'daily'][u'data'][1][u'summary'].capitalize(),
 		'arg': LAT + ',' + LONG,
 		'uid': str(int(item[u'daily'][u'data'][1][u'time'])),
