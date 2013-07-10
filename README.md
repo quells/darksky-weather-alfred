@@ -31,7 +31,7 @@ An Alfred v1 extension for the Dark Sky API on [Hack / Make](http://hackmake.org
 
 [Forecast.alfredworkflow](https://github.com/quells/darksky-weather-alfred2/blob/master/Forecast.alfredworkflow?raw=true)
 
-# Copyright
+# Disclaimer
 
 The Forecast and Dark Sky names and logos are wholly owned by The Dark Sky Company, LLC. Kai Wells does not own or claim to own anything related to Forecast or Dark Sky.
 
