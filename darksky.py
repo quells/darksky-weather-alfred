@@ -7,12 +7,12 @@ def formatTemp(t, f):
 	Input: temp float in Fahrenheit, format string (F, C, K)
 	Returns: formatted temp string
 	"""
-	if f == 'C':
-		return str(int((t-32)/1.8*100)/100) + 'C'
+	if f == 'F':
+		return str(int(t*100)/100) + u"\u2109"
+	elif f == 'C':
+		return str(int((t-32)/1.8*100)/100) + u"\u2103"
 	elif f == 'K':
-		return str(int(((t-32)/1.8+273.15)*100)/100) + 'K'
-	else:
-		return str(int(t*100)/100) + 'F'
+		return str(int(((t-32)/1.8+273.15)*100)/100) + u"\u212A"
 
 def forecast(APIKEY, LAT, LONG, FCK):
 	# GET JSON DATA
@@ -33,18 +33,21 @@ def forecast(APIKEY, LAT, LONG, FCK):
 		'title': formatTemp(item[u'currently'][u'temperature'], FCK) + ', ' + currentsummary.capitalize(),
 		'subtitle': item[u'hourly'][u'summary'].capitalize(),
 		'arg': LAT + ',' + LONG,
+		'uid': str(int(item[u'hourly'][u'data'][0][u'time'])),
 		'icon': 'icon.png'
 	})
 	xml.append ({
 		'title': 'Today: ' + formatTemp(item[u'daily'][u'data'][0][u'temperatureMin'], FCK) + ' - ' + formatTemp(item[u'daily'][u'data'][0][u'temperatureMax'], FCK),
 		'subtitle': item[u'daily'][u'data'][0][u'summary'].capitalize(),
 		'arg': LAT + ',' + LONG,
+		'uid': str(int(item[u'daily'][u'data'][0][u'time'])),
 		'icon': 'icon.png'
 	})
 	xml.append ({
 		'title': 'Tomorrow: ' + formatTemp(item[u'daily'][u'data'][1][u'temperatureMin'], FCK) + ' - ' + formatTemp(item[u'daily'][u'data'][1][u'temperatureMax'], FCK),
 		'subtitle': item[u'daily'][u'data'][1][u'summary'].capitalize(),
 		'arg': LAT + ',' + LONG,
+		'uid': str(int(item[u'daily'][u'data'][1][u'time'])),
 		'icon': 'icon.png'
 	})
 	# PLANT XML TREE
