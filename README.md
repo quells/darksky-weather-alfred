@@ -37,6 +37,10 @@ The Forecast and Dark Sky names and logos are wholly owned by The Dark Sky Compa
 
 # Version History
 
+## 1.2.3 - March 12, 2014
+
+- Updated script to use Unicode "degree Celsius", "degree Fahrenheit", and "Kelvin" rather than letters.
+
 ## 1.2.2 - April 15, 2013
 
 - Added units preference for temperature.
