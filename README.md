@@ -39,7 +39,7 @@ The Forecast and Dark Sky names and logos are wholly owned by The Dark Sky Compa
 
 ## 1.2.3 - March 12, 2014
 
-- Updated script to use Unicode "degree Fahrenheit", "degree Celsius", and "Kelvin" rather than letters in FCK().
+- Updated script to use Unicode "degree Fahrenheit", "degree Celsius", and "Kelvin" rather than letters in FCK(). (Hat tip to [jwisser](https://github.com/jwisser/darksky-weather-alfred2).)
 - Updated script to use a dict.get() call instead of try: except KeyError: to deal with differences between US and international data sets.
 - Added function documentation to forecast().
 
