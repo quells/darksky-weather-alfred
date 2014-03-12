@@ -4,17 +4,23 @@ import json
 
 def formatTemp(t, f):
 	"""
-	Input: temp float in Fahrenheit, format string (F, C, K)
+	Input: temperature float in Fahrenheit, format string ('F', 'C', or 'K')
 	Returns: formatted temp string
 	"""
-	if f == 'C':
-		return str(int((t-32)/1.8*100)/100) + 'C'
-	elif f == 'K':
-		return str(int(((t-32)/1.8+273.15)*100)/100) + 'K'
-	else:
-		return str(int(t*100)/100) + 'F'
+	f = f.lower()
+	if f == 'f':
+		return '%i'%t + u'\u2109'
+	if f == 'c':
+		return '%i'%((t-32)/1.8) + u'\u2103'
+	if f == 'k':
+		return '%i'%((t-32)/1.8+273.2) + u'\u212A'
+	return 'TEMPERATURE FORMAT ERROR'
 
 def forecast(APIKEY, LAT, LONG, FCK):
+	"""
+	Input: api key string, signed latitude float string, signed longitude float string, temperature format string
+	Returns: XML data formatted for Alfred
+	"""
 	# GET JSON DATA
 	url = 'https://api.forecast.io/forecast/' + APIKEY + '/' + LAT + ',' + LONG
 	response = urllib2.urlopen(url)
@@ -22,13 +28,9 @@ def forecast(APIKEY, LAT, LONG, FCK):
 	item = json.loads(response_items)
 	# PARSE ITEMS
 	xml = []
-	while True:
-		try:
-			currentsummary = item[u'minutely'][u'summary']
-			break
-		except KeyError:
-			currentsummary = item[u'currently'][u'summary']
-			break
+	# WEATHER DATA OUTSIDE THE U.S. DOES NOT HAVE MINUTELY DATA
+	currentdata = item.get(u'minutely', u'currently')
+	currentsummary = currentdata[u'summary']
 	xml.append ({
 		'title': formatTemp(item[u'currently'][u'temperature'], FCK) + ', ' + currentsummary.capitalize(),
 		'subtitle': item[u'hourly'][u'summary'].capitalize(),

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.quells.forecast.io</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>89B6D52D-8CF0-4DED-BCF6-6697C74A943F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>900F45A8-AF3D-4CF1-BDB6-E8B1C1E7515F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Kai Wells</string>
+	<key>description</key>
+	<string>Forecast.io API</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Forecast</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>weather</string>
+				<key>runningsubtext</key>
+				<string>Looking Outside…</string>
+				<key>script</key>
+				<string>from darksky import forecast
+
+print forecast("APIKEY", "LAT", "LONG", "FCK")</string>
+				<key>subtext</key>
+				<string>What's the weather like?</string>
+				<key>title</key>
+				<string>Forecast.io</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>89B6D52D-8CF0-4DED-BCF6-6697C74A943F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>open 'http://forecast.io/#/f/{query}'</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>900F45A8-AF3D-4CF1-BDB6-E8B1C1E7515F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>https://github.com/quells/darksky-weather-alfred2</string>
+	<key>uidata</key>
+	<dict>
+		<key>89B6D52D-8CF0-4DED-BCF6-6697C74A943F</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>900F45A8-AF3D-4CF1-BDB6-E8B1C1E7515F</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/quells/darksky-weather-alfred2</string>
+</dict>
+</plist>

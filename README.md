@@ -1,5 +1,5 @@
 Forecast.io in Alfred 2
-===============
+=======================
 
 A Python script to display the current weather conditions from the Forecast.io API in the Alfred window. You will need Alfred 2 and a free Forecast.io API key to use this.
 
@@ -36,6 +36,12 @@ An Alfred v1 extension for the Dark Sky API on [Hack / Make](http://hackmake.org
 The Forecast and Dark Sky names and logos are wholly owned by The Dark Sky Company, LLC. Kai Wells does not own or claim to own anything related to Forecast or Dark Sky.
 
 # Version History
+
+## 1.2.3 - March 12, 2014
+
+- Updated script to use Unicode "degree Fahrenheit", "degree Celsius", and "Kelvin" rather than letters in FCK().
+- Updated script to use a dict.get() call instead of try: except KeyError: to deal with differences between US and international data sets.
+- Added function documentation to forecast().
 
 ## 1.2.2 - April 15, 2013
 
