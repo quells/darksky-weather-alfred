@@ -8,11 +8,11 @@ def formatTemp(t, f):
 	Returns: formatted temp string
 	"""
 	if f == 'C':
-		return str(int((t-32)/1.8*100)/100) + 'C'
+		return str(int((t-32)/1.8*100)/100) + u"\u2103"
 	elif f == 'K':
-		return str(int(((t-32)/1.8+273.15)*100)/100) + 'K'
+		return str(int(((t-32)/1.8+273.15)*100)/100) + u"\u212A"
 	else:
-		return str(int(t*100)/100) + 'F'
+		return str(int(t*100)/100) + u"\u2109"
 
 def forecast(APIKEY, LAT, LONG, FCK):
 	# GET JSON DATA
