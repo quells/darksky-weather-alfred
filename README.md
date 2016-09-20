@@ -36,6 +36,7 @@ The Dark Sky name and logo are wholly owned by The Dark Sky Company, LLC. Kai We
 - Updated script to move away from deprecated Forecast.io API.
 - Updated script to keep everything in JSON rather than converting to XML.
 - Changed output formatting to emphasize weather conditions over temperature.
+- Changed workflow icon from Forecast.io to Dark Sky.
 
 ## 1.2.3 - March 12, 2014
 
