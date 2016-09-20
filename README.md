@@ -1,41 +1,41 @@
-Forecast.io in Alfred 2
-=======================
+Alfred Weather Powered by Dark Sky
+==================================
 
-A Python script to display the current weather conditions from the Forecast.io API in the Alfred window. You will need Alfred 2 and a free Forecast.io API key to use this.
+A Python script to display the current weather conditions from the Dark Sky API in Alfred. You will need Alfred 3 and a free Dark Sky API key to use this.
 
 # Installation
 
-To install the Forecast.io Weather workflow, double click on ```Forecast.alfredworkflow``` or drag the workflow to the workflow window in Alfred.
+[Download](https://github.com/quells/darksky-weather-alfred2/blob/master/Weather.alfredworkflow?raw=true)
 
-1. Use the [registration form](https://developer.forecast.io/register) to create a free Forecast.io developer account to get an API key.
+To install the Dark Sky Weather workflow, double click on ```Weather.alfredworkflow``` or drag the workflow to the workflow window in Alfred.
+
+1. Use the [registration form](https://darksky.net/dev/register) to create a free Dark Sky developer account to get an API key.
 2. [Find your latitude and longitude](http://stevemorse.org/jcal/latlon.php), but don’t use more than 4 decimal places.
 3. Decide what units you would like to use for temperature. Options include Fahrenheit, Celsius, and Kelvin.
 
-Next, edit the first script filter by double clicking on it. Edit the line ```print forecast(“APIKEY”, “LAT”, “LONG”, “FCK”)``` to fill in your Forecast.io API key, location, and unit preference. Be sure to keep these in quotes.
+Next, edit the first script filter by double clicking on it. Edit the line ```print darksky(“APIKEY”, “LAT”, “LONG”, “TEMP_UNITS”)``` to fill in your Dark Sky API key, location, and unit preference. Be sure to keep these in quotes.
 
-Example: ```print forcast(“APIKEY”, “52.2053”, “0.1218”, “C”)```
+Example: ```print darksky(“abc123”, “52.2053”, “0.1218”, “C”)```
 
 # How to use
 
 Simply type ```weather``` (or whatever you configure) into Alfred. If your API access is successful, the current temperature and weather condition should appear followed by a summary of weather in the near future.
 
-If you want more information, hit ```enter``` once the current weather has been displayed. This will open [Forecast.io](http://forecast.io) in Safari.
-
-# Based upon
-
-[Dan Palmer's reddit workflow](http://danpalmer.me/blog/articles/2013-01-12-reddit-workflow-for-alfred-20.html)
-
-An Alfred v1 extension for the Dark Sky API on [Hack / Make](http://hackmake.org/2012/11/dark-sky-alfred-extension)
-
-# Download
-
-[Forecast.alfredworkflow](https://github.com/quells/darksky-weather-alfred2/blob/master/Forecast.alfredworkflow?raw=true)
+If you want more information, hit ```enter``` once the current weather has been displayed. This will open [Dark Sky](http://darksky.net) in the default browser.
 
 # Disclaimer
 
-The Forecast and Dark Sky names and logos are wholly owned by The Dark Sky Company, LLC. Kai Wells does not own or claim to own anything related to Forecast or Dark Sky.
+The Dark Sky name and logo are wholly owned by The Dark Sky Company, LLC. Kai Wells does not own or claim to own anything related to Dark Sky.
 
 # Version History
+
+## 1.3 - September 20, 2016
+
+- Updated README to reflect the change in branding from 'Forecast.io' to 'Powered by Dark Sky'.
+- Changed `forecast()` to `darksky()`.
+- Updated script to move away from deprecated Forecast.io API.
+- Updated script to keep everything in JSON rather than converting to XML.
+- Changed output formatting to emphasize weather conditions over temperature.
 
 ## 1.2.3 - March 12, 2014
 
