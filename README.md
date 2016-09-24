@@ -3,6 +3,8 @@ Alfred Weather Powered by Dark Sky
 
 A Python script to display the current weather conditions from the Dark Sky API in Alfred. You will need Alfred 3 and a free Dark Sky API key to use this.
 
+![Weather in southern California is boring.](example.png)
+
 # Installation
 
 [Download](https://github.com/quells/darksky-weather-alfred2/blob/master/Weather.alfredworkflow?raw=true)
