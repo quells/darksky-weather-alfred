@@ -35,6 +35,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>open 'https://darksky.net/{query}'</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>06C9C4A9-38CE-441A-8D06-E2F2D8B39B60</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>argumenttype</key>
@@ -56,7 +79,7 @@
 				<key>script</key>
 				<string>from darksky import darksky
 
-print darksky("5f6abe11b00e3e67932f849fc62f841a", "32.7278", "-117.2384", "F")</string>
+print darksky("APIKEY", "LAT", "LONG", "TEMP_UNITS")</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -77,32 +100,23 @@ print darksky("5f6abe11b00e3e67932f849fc62f841a", "32.7278", "-117.2384", "F")</
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>open 'https://darksky.net/{query}'</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>06C9C4A9-38CE-441A-8D06-E2F2D8B39B60</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>This workflow uses the Dark Sky API to get weather data.
+
+Type "weather" to display weather information for the present and near future. If you want more information, hit enter to open the Dark Sky website with the provided coordinates.
+
+INITIAL SETUP
+
+1. Use the registration form (https://darksky.net/dev/register) to create a free Dark Sky developer account to get an API key.
+
+2. Find your latitude and longitude (http://stevemorse.org/jcal/latlon.php), but don’t use more than 4 decimal places.
+
+3. Decide what units you would like to use for temperature. Options include F, C, and K.
+
+4. Edit the script filter by double clicking on it. Edit the line `print forecast("APIKEY", "LAT", "LONG", "TEMP_UNITS")` to fill in your Dark Sky API key, location, and unit preference. Be sure to keep these in quotes.
+
+Example: `print forcast("APIKEY", "52.2053", "0.1218", "C")`</string>
 	<key>uidata</key>
 	<dict>
 		<key>06C9C4A9-38CE-441A-8D06-E2F2D8B39B60</key>
@@ -120,7 +134,9 @@ print darksky("5f6abe11b00e3e67932f849fc62f841a", "32.7278", "-117.2384", "F")</
 			<integer>50</integer>
 		</dict>
 	</dict>
+	<key>version</key>
+	<string>1.3</string>
 	<key>webaddress</key>
-	<string>github.com/quells</string>
+	<string>github.com/quells/darksky-weather-alfred</string>
 </dict>
 </plist>
